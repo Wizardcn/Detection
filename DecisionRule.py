@@ -1,11 +1,15 @@
-def optimumDecisionRule(r1, r2, r3):
-    if r1 + r2 + r3 < 0:
-        mhat = 0
-    elif r1 + r2 + r3 > 0:
+from math import *
+
+
+def ODR_not(Pm0, E, r1, r2, r3, var1, var2, var3):
+    """ optimum decision rule for not jointly statistically independent """
+    TH = (1 / (2 * sqrt(E))) * log((1-Pm0)/Pm0)
+    l = [r/(variance ^ 2)
+         for r, variance in zip([r1, r2, r3], [var1, var2, var3])]
+    if l > TH:
         mhat = 1
-    return mhat
+    elif l < TH:
+        mhat = 0
 
 
 if __name__ == "__main__":
-    print(optimumDecisionRule(3, 3, 2))
-    print(optimumDecisionRule(3, -3, -2))
