@@ -15,6 +15,7 @@ def generate_mi(Pm0, n):
         else:
             mi.append(1)
             m1 += 1
+    # print(m0, m1)
     return np.array(mi)
 
 
