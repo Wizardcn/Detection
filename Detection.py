@@ -2,6 +2,7 @@ import numpy as np
 from Channel import received_voltage
 import Transmitter as transmit
 import DecisionRule
+import time
 
 
 def detection(Pm0, E, r1, r2, r3, var1, var2, var3):
@@ -17,7 +18,7 @@ def detection(Pm0, E, r1, r2, r3, var1, var2, var3):
 def prob_of_error(mi, mhat):
     error = 0
     for mi_element, mhat_element in zip(mi, mhat):
-        if mi_element == mhat_element:
+        if mi_element != mhat_element:
             error += 1
         else:
             continue
