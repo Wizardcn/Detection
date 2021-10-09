@@ -27,7 +27,7 @@ def show_noise_pdf(noise_array):
 if __name__ == "__main__":
     # noise = np.random.normal(0, 9, 100)
     # show_noise_pdf(noise)
-    s = transmit.voltage_s(transmit.generate_mi(0.5, 500000), 0.1, 10, 0.1)
+    s = transmit.voltage_s(transmit.generate_mi(0.5, 500000), 0.1)
     n = np.random.normal(0, 9, s.shape[0])
     print(s)
     print(n)
@@ -38,3 +38,6 @@ if __name__ == "__main__":
     print("r1 = ", r1)
     print("r2 = ", r2)
     print("r3 = ", r3)
+    print(r1.shape[0])
+    print(r2.shape[0])
+    print(r3.shape[0])
