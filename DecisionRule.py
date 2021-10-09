@@ -13,5 +13,9 @@ def ODR_not(Pm0, E, r1, r2, r3, var1, var2, var3):
     return mhat
 
 
+def arbitary():
+    pass
+
+
 if __name__ == "__main__":
     ODR_not(0.5, 0.1, 5, 10, -3, 9, 9, 9)
