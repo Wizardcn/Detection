@@ -18,12 +18,11 @@ def generate_mi(Pm0, n):
     return np.array(mi)
 
 
-def voltage_s(mi, Ei, Ef, inc):
+def voltage_s(mi, E):
     """ pass array of mi to this function to transmit voltage s """
-    E = np.linspace(Ei, Ef, num=int(Ef / inc), endpoint=True)
-    length = min(E.shape[0], mi.shape[0])
-    return np.power(-1, mi)[:length] * np.sqrt(E)[:length]
+    # E = np.linspace(Ei, Ef, num=int(Ef / inc), endpoint=True)
+    return np.power(-1, mi) * np.sqrt(E)
 
 
 if __name__ == "__main__":
-    print(voltage_s(generate_mi(0.5, 500000), 0.1, 10, 0.1))
+    print(voltage_s(generate_mi(0.5, 500000), 0.5).shape[0])
