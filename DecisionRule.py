@@ -10,6 +10,7 @@ def ODR_not(Pm0, E, r1, r2, r3, var1, var2, var3):
         mhat = 1
     elif l < TH:
         mhat = 0
+    return mhat
 
 
 if __name__ == "__main__":
