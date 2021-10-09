@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import Transmitter as transmit
 
 
 def received_voltage(s_array, n_array):
@@ -21,3 +22,19 @@ def show_noise_pdf(noise_array):
     #          np.exp(- (np.sort(noise) - mu)**2 / (2 * sigma**2)),
     #          linewidth=2, color='r')
     plt.show()
+
+
+if __name__ == "__main__":
+    # noise = np.random.normal(0, 9, 100)
+    # show_noise_pdf(noise)
+    s = transmit.voltage_s(transmit.generate_mi(0.5, 500000), 0.1, 10, 0.1)
+    n = np.random.normal(0, 9, s.shape[0])
+    print(s)
+    print(n)
+    print(received_voltage(s, n))
+    r1 = received_voltage(s, n)
+    r2 = received_voltage(s, n)
+    r3 = received_voltage(s, n)
+    print("r1 = ", r1)
+    print("r2 = ", r2)
+    print("r3 = ", r3)
