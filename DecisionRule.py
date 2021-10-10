@@ -23,8 +23,13 @@ def ABR(Pm0, E, r1, r2, r3, var1, var2, var3):
     l = r1+r2+r3
     if l >= 0:
         mhat = 0
-    else mhat = 1:
+    else:
+        mhat = 1
     return mhat
+
+
+def ODR_NOT():
+    pass
 
 
 if __name__ == "__main__":
