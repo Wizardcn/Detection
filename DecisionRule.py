@@ -17,8 +17,15 @@ def ODR(Pm0, E, r1, r2, r3, var1, var2, var3):
     return mhat
 
 
-def arbitary():
-    pass
+def ODR(Pm0, E, r1, r2, r3, var1, var2, var3):
+    TH = (1 / (2 * sqrt(E))) * log((1-Pm0)/Pm0)
+    l = r1+r2+r3
+
+    if l >= TH:
+        mhat = 0
+    elif l < TH:
+        mhat = 1
+    return mhat
 
 
 if __name__ == "__main__":
