@@ -5,15 +5,18 @@ from Transmitter import *
 import matplotlib.pyplot as plt
 
 
-def main():
+def simulation(Pm0, var1, var2, var3, n):
 
     t1 = time.time()
     # find probability of error
-    Pm0 = 0.5
-    var1 = 9
-    var2 = 9
-    var3 = 9
-    mi_array = generate_mi(Pm0, 5)
+    # -------------- can modify ----------------------
+    # Pm0 = 0.5
+    # var1 = 9
+    # var2 = 9
+    # var3 = 9
+    # mi_array = generate_mi(Pm0, 50)
+    # -------------------------------------------------
+    mi_array = generate_mi(Pm0, n)
     E = np.linspace(0.1, 10, num=100, endpoint=True)
     prob_of_error_array = []
     for e in E:
@@ -26,17 +29,17 @@ def main():
         prob_of_error_array.append(prob_of_error(mi_array, mhat_array))
     prob_of_error_array = np.array(prob_of_error_array)
     t2 = time.time() - t1
-    print(prob_of_error_array)
-    print(E)
+    # print(prob_of_error_array)
+    # print(E)
 
     # vitualize data
     figure, axis1 = plt.subplots(figsize=(8, 6))
     axis1.set_title("Simulation transmittion using\n"
-                    r"$P(m_{0})$ = $P(m_{1})$" + "\n" + r"$\sigma_{1}^2$ = $\sigma_{2}^2$ = $\sigma_{3}^2$ = 9")
+                    r"$P(m_{0})$" + f" = {Pm0} " + r"$P(m_{1})$" + f" = {1-Pm0} " + "\n" + r"$\sigma_{1}^2$" + f" = {var1} " + r"$\sigma_{2}^2$" + f" = {var2} " + r"$\sigma_{3}^2$" + f" = {var3} ")
     axis1.set_yscale('log')
     axis1.plot(E, prob_of_error_array)
     axis1.set_xlabel('Signal energy')
-    axis1.set_ylabel('probability of Error')
+    axis1.set_ylabel('Probability of Error')
     plt.autoscale(enable=True, axis='x', tight=True)
     plt.tight_layout()
     # plt.savefig(f'./figure/{filename[10:][:-4]}-freq.png')
@@ -45,4 +48,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    simulation(0.5, 9, 9, 9, 500000)
