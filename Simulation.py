@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 
 def simulation(Pm0, var1, var2, var3, n):
 
-    t1 = time.time()
     # find probability of error
     # -------------- can modify ----------------------
     # Pm0 = 0.5
@@ -28,7 +27,6 @@ def simulation(Pm0, var1, var2, var3, n):
                                r3=r3, var1=var1, var2=var2, var3=var3)
         prob_of_error_array.append(prob_of_error(mi_array, mhat_array))
     prob_of_error_array = np.array(prob_of_error_array)
-    t2 = time.time() - t1
     # print(prob_of_error_array)
     # print(E)
 
@@ -42,10 +40,16 @@ def simulation(Pm0, var1, var2, var3, n):
     axis1.set_ylabel('Probability of Error')
     plt.autoscale(enable=True, axis='x', tight=True)
     plt.tight_layout()
-    # plt.savefig(f'./figure/{filename[10:][:-4]}-freq.png')
-    print(f'Calculated in {t2:0.2f} sec or {t2/60:0.2f} min.')
-    plt.show()
+    plt.savefig(f'./Figure/{input("Enter file name: ")}.png')
+    # plt.show()
 
 
 if __name__ == '__main__':
-    simulation(0.5, 9, 9, 9, 500000)
+
+    Pm0, var1, var2, var3, message = input(
+        "Please enter Pm0, variance1, variance2, variance3 and amount of random messages:\n(ex. 0.5 9 9 9 50)\n-> ").split(" ")
+    t1 = time.time()
+    print("processing...")
+    simulation(0.5, 9, 9, 9, 50)
+    t2 = time.time() - t1
+    print(f'Calculated in {t2:0.2f} sec or {t2/60:0.2f} min.')
