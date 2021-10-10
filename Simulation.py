@@ -10,10 +10,10 @@ def main():
     t1 = time.time()
     # find probability of error
     Pm0 = 0.5
-    var1 = 1
-    var2 = 1
-    var3 = 1
-    mi_array = generate_mi(Pm0, 500000)
+    var1 = 9
+    var2 = 9
+    var3 = 9
+    mi_array = generate_mi(Pm0, 5)
     E = np.linspace(0.1, 10, num=100, endpoint=True)
     prob_of_error_array = []
     for e in E:
@@ -30,7 +30,9 @@ def main():
     print(E)
 
     # vitualize data
-    figure, axis1 = plt.subplots(figsize=(8, 4))
+    figure, axis1 = plt.subplots(figsize=(8, 6))
+    axis1.set_title("Simulation transmittion using\n"
+                    r"$P(m_{0})$ = $P(m_{1})$" + "\n" + r"$\sigma_{1}^2$ = $\sigma_{2}^2$ = $\sigma_{3}^2$ = 9")
     axis1.set_yscale('log')
     axis1.plot(E, prob_of_error_array)
     axis1.set_xlabel('Signal energy')
@@ -38,7 +40,7 @@ def main():
     plt.autoscale(enable=True, axis='x', tight=True)
     plt.tight_layout()
     # plt.savefig(f'./figure/{filename[10:][:-4]}-freq.png')
-    print(f'Calculated in {t2:0.2f} seconds.')
+    print(f'Calculated in {t2:0.2f} sec or {t2/60:0.2f} min.')
     plt.show()
 
 
