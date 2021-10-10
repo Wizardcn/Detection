@@ -19,10 +19,13 @@ def simulation(Pm0, var1, var2, var3, n):
     E = np.linspace(0.1, 10, num=100, endpoint=True)
     prob_of_error_array = []
     for e in E:
-        s = voltage_s(mi_array, e)
-        r1 = received_voltage(s, var1)
-        r2 = received_voltage(s, var2)
-        r3 = received_voltage(s, var3)
+        s = transmit.voltage_s(mi_array, e)
+        n1 = generate_noise(var1, n)
+        n2 = generate_noise(var2, n)
+        n3 = generate_noise(var3, n)
+        r1 = received_voltage(s, n1)
+        r2 = received_voltage(s, n2)
+        r3 = received_voltage(s, n3)
         mhat_array = detection(Pm0=Pm0, E=e, r1=r1, r2=r2,
                                r3=r3, var1=var1, var2=var2, var3=var3)
         prob_of_error_array.append(prob_of_error(mi_array, mhat_array))
