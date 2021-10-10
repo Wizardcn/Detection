@@ -6,20 +6,26 @@ import matplotlib.pyplot as plt
 
 
 def main():
+
     t1 = time.time()
     # find probability of error
-    mi_array = generate_mi(0.5, 500)
+    Pm0 = 0.5
+    var1 = 1
+    var2 = 1
+    var3 = 1
+    mi_array = generate_mi(Pm0, 500000)
     E = np.linspace(0.1, 10, num=100, endpoint=True)
     prob_of_error_array = []
     for e in E:
         s = voltage_s(mi_array, e)
-        r1 = received_voltage(s, np.random.normal(0, 9, s.shape[0]))
-        r2 = received_voltage(s, np.random.normal(0, 9, s.shape[0]))
-        r3 = received_voltage(s, np.random.normal(0, 9, s.shape[0]))
-        mhat_array = detection(Pm0=0.5, E=e, r1=r1, r2=r2,
-                               r3=r3, var1=9, var2=9, var3=9)
+        r1 = received_voltage(s, var1)
+        r2 = received_voltage(s, var2)
+        r3 = received_voltage(s, var3)
+        mhat_array = detection(Pm0=Pm0, E=e, r1=r1, r2=r2,
+                               r3=r3, var1=var1, var2=var2, var3=var3)
         prob_of_error_array.append(prob_of_error(mi_array, mhat_array))
     prob_of_error_array = np.array(prob_of_error_array)
+    t2 = time.time() - t1
     print(prob_of_error_array)
     print(E)
 
@@ -32,9 +38,8 @@ def main():
     plt.autoscale(enable=True, axis='x', tight=True)
     plt.tight_layout()
     # plt.savefig(f'./figure/{filename[10:][:-4]}-freq.png')
+    print(f'Calculated in {t2:0.2f} seconds.')
     plt.show()
-    t2 = time.time() - t1
-    print(f'Executed in {t2:0.2f} seconds.')
 
 
 if __name__ == '__main__':

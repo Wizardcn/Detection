@@ -26,4 +26,7 @@ def voltage_s(mi, E):
 
 
 if __name__ == "__main__":
-    print(voltage_s(generate_mi(0.5, 500000), 0.5).shape[0])
+    mi = generate_mi(0.5, 50)
+    s = voltage_s(mi, 10)
+    print(mi)
+    print(s)
