@@ -48,8 +48,12 @@ if __name__ == '__main__':
 
     Pm0, var1, var2, var3, message = input(
         "Please enter Pm0, variance1, variance2, variance3 and amount of random messages:\n(ex. 0.5 9 9 9 50)\n-> ").split(" ")
+    Pm0 = float(Pm0)
+    var1, var2, var3, message = [int(element)
+                                 for element in [var1, var2, var3, message]]
+
     t1 = time.time()
     print("processing...")
-    simulation(0.5, 9, 9, 9, 50)
+    simulation(Pm0, var1, var2, var3, message)
     t2 = time.time() - t1
     print(f'Calculated in {t2:0.2f} sec or {t2/60:0.2f} min.')
