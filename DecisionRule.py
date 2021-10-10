@@ -3,6 +3,8 @@ from math import *
 # m1 = 0
 # m0 = 1
 
+# Optimal Decision Rule
+
 
 def ODR(Pm0, E, r1, r2, r3, var1, var2, var3):
     """ optimum decision rule for jointly statistically independent """

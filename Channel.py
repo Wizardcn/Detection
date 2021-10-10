@@ -48,11 +48,11 @@ if __name__ == "__main__":
     # print(r2.shape[0])
     # print(r3.shape[0])
     mi_array = transmit.generate_mi(0.5, 5000)
-    E = 9
+    E = 0.1
     Pm0 = 0.5
-    var1 = 1
-    var2 = 1
-    var3 = 1
+    var1 = 9
+    var2 = 9
+    var3 = 9
     s = transmit.voltage_s(mi_array, E)
 
     r1 = received_voltage(s, var1)
