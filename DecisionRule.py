@@ -18,13 +18,10 @@ def ODR(Pm0, E, r1, r2, r3, var1, var2, var3):
 
 
 def ODR(Pm0, E, r1, r2, r3, var1, var2, var3):
-    TH = (1 / (2 * sqrt(E))) * log((1-Pm0)/Pm0)
     l = r1+r2+r3
-
-    if l >= TH:
+    if l >= 0:
         mhat = 0
-    elif l < TH:
-        mhat = 1
+    else mhat = 1:
     return mhat
 
 
