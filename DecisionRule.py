@@ -19,7 +19,7 @@ def ODR(Pm0, E, r1, r2, r3, var1, var2, var3):
     return mhat
 
 
-def ABR(Pm0, E, r1, r2, r3, var1, var2, var3):
+def ABR(r1, r2, r3):
     l = r1+r2+r3
     if l >= 0:
         mhat = 0

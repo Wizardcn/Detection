@@ -5,14 +5,20 @@ import DecisionRule
 import time
 
 
-def detection(Pm0, E, r1, r2, r3, var1, var2, var3):
+def detection(Pm0, E, r1, r2, r3, var1, var2, var3, decision):
     mhat = []
-    for i in range(r1.shape[0]):
-        decision_result = DecisionRule.ODR(
-            Pm0=Pm0, E=E, r1=r1[i], r2=r2[i], r3=r3[i], var1=var1, var2=var2, var3=var3)
-        mhat.append(decision_result)
-    mhat_array = np.array(mhat)
-    return mhat_array
+    if decision == "optimal":
+        for i in range(r1.shape[0]):
+            decision_result = DecisionRule.ODR(
+                Pm0=Pm0, E=E, r1=r1[i], r2=r2[i], r3=r3[i], var1=var1, var2=var2, var3=var3)
+            mhat.append(decision_result)
+    elif decision == "arbitrary":
+        for i in range(r1.shape[0]):
+            decision_result = DecisionRule.ABR(r1=r1[i], r2=r2[i], r3=r3[i])
+            mhat.append(decision_result)
+    else:
+        return "Choose 1 decision method to detection"
+    return np.array(mhat)
 
 
 def prob_of_error(mi, mhat):
