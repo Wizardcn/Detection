@@ -1,7 +1,7 @@
 from math import *
 
-# m1 = 0
-# m0 = 1
+# m1 = 1 -> s < 0 -> mhat = 1
+# m0 = 0 -> s > 0 -> mhat = 0
 
 # Optimal Decision Rule
 
@@ -33,4 +33,5 @@ def ODR_NOT():
 
 
 if __name__ == "__main__":
+    # test
     ODR(0.5, 0.1, 5, 10, -3, 9, 9, 9)

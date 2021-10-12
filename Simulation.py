@@ -7,14 +7,6 @@ import matplotlib.pyplot as plt
 
 def simulation(Pm0, var1, var2, var3, n):
 
-    # find probability of error
-    # -------------- can modify ----------------------
-    # Pm0 = 0.5
-    # var1 = 9
-    # var2 = 9
-    # var3 = 9
-    # mi_array = generate_mi(Pm0, 50)
-    # -------------------------------------------------
     mi_array = generate_mi(Pm0, n)
     E = np.linspace(0.1, 10, num=100, endpoint=True)
     prob_of_error_array = []

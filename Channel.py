@@ -19,8 +19,8 @@ def received_voltage(s_array, n_array):
     return s_array + n_array
 
 
-def show_pdf(rv):
-    # noise = np.random.normal(mu, sigma, n)
+def show_hist(rv):
+
     mu = np.mean(rv)
     sigma = np.sqrt(np.var(rv))
     # print("mu: ", mu)
@@ -37,20 +37,7 @@ def show_pdf(rv):
 
 
 if __name__ == "__main__":
-    # s = transmit.voltage_s(transmit.generate_mi(0.5, 50), 0.1)
-    # n = np.random.normal(0, 9, s.shape[0])
-    # print(s)
-    # print(n)
-    # print(received_voltage(s, n))
-    # r1 = received_voltage(s, np.random.normal(0, 9, s.shape[0]))
-    # r2 = received_voltage(s, np.random.normal(0, 9, s.shape[0]))
-    # r3 = received_voltage(s, np.random.normal(0, 9, s.shape[0]))
-    # print("r1 = ", r1)
-    # print("r2 = ", r2)
-    # print("r3 = ", r3)
-    # print(r1.shape[0])
-    # print(r2.shape[0])
-    # print(r3.shape[0])
+    # test
     mi_array = transmit.generate_mi(0.5, 50)
     E = 9
     Pm0 = 0.5
@@ -61,12 +48,10 @@ if __name__ == "__main__":
     n1 = generate_noise(var1, 50)
     n2 = generate_noise(var2, 50)
     n3 = generate_noise(var3, 50)
+    print(n2)
 
     r1 = received_voltage(s, n1)
     r2 = received_voltage(s, n2)
     r3 = received_voltage(s, n3)
 
-    # t = s + n1 + n2 + n3
-
-    # noise = np.random.normal(0, 9, 100)
-    # print(noise)
+    print(r1)

@@ -26,6 +26,7 @@ def prob_of_error(mi, mhat):
 
 
 if __name__ == "__main__":
+    # test
     mi_array = transmit.generate_mi(0.5, 5)
     E = 9
     Pm0 = 0.5
@@ -47,4 +48,3 @@ if __name__ == "__main__":
     print(result)
     print(result.shape[0])
     print(prob_of_error(mi=mi_array, mhat=result))
-    # E = np.linspace(Ei, Ef, num=int(Ef / inc_E), endpoint=True)
