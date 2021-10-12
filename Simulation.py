@@ -42,7 +42,7 @@ def simulation(Pm0, var1, var2, var3, n, decision):
 if __name__ == '__main__':
 
     Pm0, var1, var2, var3, message, decision = input(
-        "Please enter Pm0, variance1, variance2, variance3 and amount of random messages:\n(ex. 0.5 9 9 9 50)\n-> ").split(" ")
+        "Please enter Pm0, variance1, variance2, variance3, amount of random messages and decision method (optimal, arbitrary, optimalForNot):\n(ex. 0.5 9 9 9 50 optimalForNot)\n-> ").split(" ")
     Pm0 = float(Pm0)
     var1, var2, var3, message = [int(element)
                                  for element in [var1, var2, var3, message]]
