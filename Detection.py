@@ -16,8 +16,6 @@ def detection(Pm0, E, r1, r2, r3, var1, var2, var3, decision):
         for i in range(r1.shape[0]):
             decision_result = DecisionRule.ABR(r1=r1[i], r2=r2[i], r3=r3[i])
             mhat.append(decision_result)
-    else:
-        return "Choose 1 decision method to detection"
     return np.array(mhat)
 
 

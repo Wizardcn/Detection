@@ -5,7 +5,7 @@ from Transmitter import *
 import matplotlib.pyplot as plt
 
 
-def simulation(Pm0, var1, var2, var3, n):
+def simulation(Pm0, var1, var2, var3, n, decision):
 
     mi_array = generate_mi(Pm0, n)
     E = np.linspace(0.1, 10, num=100, endpoint=True)
@@ -19,7 +19,7 @@ def simulation(Pm0, var1, var2, var3, n):
         r2 = received_voltage(s, n2)
         r3 = received_voltage(s, n3)
         mhat_array = detection(Pm0=Pm0, E=e, r1=r1, r2=r2,
-                               r3=r3, var1=var1, var2=var2, var3=var3)
+                               r3=r3, var1=var1, var2=var2, var3=var3, decision=decision)
         prob_of_error_array.append(prob_of_error(mi_array, mhat_array))
     prob_of_error_array = np.array(prob_of_error_array)
     # print(prob_of_error_array)
@@ -41,14 +41,13 @@ def simulation(Pm0, var1, var2, var3, n):
 
 if __name__ == '__main__':
 
-    Pm0, var1, var2, var3, message = input(
+    Pm0, var1, var2, var3, message, decision = input(
         "Please enter Pm0, variance1, variance2, variance3 and amount of random messages:\n(ex. 0.5 9 9 9 50)\n-> ").split(" ")
     Pm0 = float(Pm0)
     var1, var2, var3, message = [int(element)
                                  for element in [var1, var2, var3, message]]
-
     t1 = time.time()
     print("processing...")
-    simulation(Pm0, var1, var2, var3, message)
+    simulation(Pm0, var1, var2, var3, message, decision)
     t2 = time.time() - t1
     print(f'Calculated in {t2:0.2f} sec or {t2/60:0.2f} min.')
