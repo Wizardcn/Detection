@@ -51,3 +51,20 @@ if __name__ == '__main__':
     simulation(Pm0, var1, var2, var3, message, decision)
     t2 = time.time() - t1
     print(f'Calculated in {t2:0.2f} sec or {t2/60:0.2f} min.')
+
+    # var1 = 4
+    # var2 = 9
+    # var3 = 25
+    # mi_array = generate_mi(0.5, 10)
+    # s = transmit.voltage_s(mi_array, 5)
+    # n1 = generate_noise(var1, 10)
+    # n2 = generate_noise(var2, 10)
+    # n3 = generate_noise(var3, 10)
+    # r1 = received_voltage(s, n1)
+    # r2 = received_voltage(s, n2)
+    # r3 = received_voltage(s, n3)
+    # data = np.array([r1, r2, r3])
+    # cov_matrix = np.cov(data, bias=True)
+    # inv_cov_matrix = np.linalg.inv(cov_matrix)
+    # print(cov_matrix)
+    # print(inv_cov_matrix)

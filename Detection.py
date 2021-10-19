@@ -6,6 +6,8 @@ import time
 
 
 def detection(Pm0, E, r1, r2, r3, var1, var2, var3, decision):
+    data = np.array([r1, r2, r3])
+    cov_matrix = np.cov(data, bias=True)
     mhat = []
     if decision == "optimal":
         for i in range(r1.shape[0]):
@@ -15,6 +17,11 @@ def detection(Pm0, E, r1, r2, r3, var1, var2, var3, decision):
     elif decision == "arbitrary":
         for i in range(r1.shape[0]):
             decision_result = DecisionRule.ABR(r1=r1[i], r2=r2[i], r3=r3[i])
+            mhat.append(decision_result)
+    elif decision == "optimalForNot":
+        for i in range(r1.shape[0]):
+            decision_result = DecisionRule.ODR_NOT(
+                Pm0, E, r1[i], r2[i], r3[i], cov_matrix)
             mhat.append(decision_result)
     return np.array(mhat)
 
