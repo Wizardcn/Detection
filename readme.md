@@ -19,3 +19,25 @@
 
 #### (e)
 ![FE1](https://github.com/Wizardcn/Detection/blob/master/Figure/FE1.png?raw=true)
+
+### NOT Jointly Statistically Independent
+### Graph for (h) (c)
+![C2](https://github.com/Wizardcn/Detection/blob/master/Figure/C2.png?raw=true)
+
+### Graph for (h) (d)
+![D2](https://github.com/Wizardcn/Detection/blob/master/Figure/D2.png?raw=true)
+
+### Graph for (h) (e)
+![E2](https://github.com/Wizardcn/Detection/blob/master/Figure/E2.png?raw=true)
+
+
+### Graph for (h) (f)
+#### (c)
+_เหมือนข้อ (c) ของ Jointly_
+
+#### (d)
+_เหมือนข้อ (d) ของ Jointly_
+
+#### (e)
+_เหมือนข้อ (e) ของ Jointly_
+
