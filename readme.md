@@ -21,9 +21,8 @@
 ![FE1](https://github.com/Wizardcn/Detection/blob/master/Figure/FE1.png?raw=true)
 
 #### (g)
-'''
-$P(m_{0})$ = 0.5 $P(m_{1})$ = 0.5 $\sigma_{1}^2$ = 9 $\sigma_{2}^2$ = 9 $\sigma_{3}^2$ = 9
-'''
+![Equation](https://latex.codecogs.com/png.image?\dpi{110}&space;P(m_{0})&space;=&space;0.5&space;\:&space;P(m_{1})&space;=&space;0.5&space;\:&space;\sigma_{1}^2&space;=&space;9&space;\:&space;\sigma_{2}^2&space;=&space;9&space;\:&space;\sigma_{3}^2&space;=&space;9)
+![opt_vs_abr1](https://github.com/Wizardcn/Detection/blob/master/Figure/opt_vs_abr1.png?raw=true)
 
 ### NOT Jointly Statistically Independent
 ### Graph for (h) (c)
