@@ -26,7 +26,8 @@
 ![opt_vs_abr2](https://github.com/Wizardcn/Detection/blob/master/Figure/opt_vs_abr2.png?raw=true)
 ![opt_vs_abr3](https://github.com/Wizardcn/Detection/blob/master/Figure/opt_vs_abr3.png?raw=true)
 
-### NOT Jointly Statistically Independent
+
+# NOT Jointly Statistically Independent
 ### Graph for (h) (c)
 ![C2](https://github.com/Wizardcn/Detection/blob/master/Figure/C2.png?raw=true)
 
