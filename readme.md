@@ -20,6 +20,9 @@
 #### (e)
 ![FE1](https://github.com/Wizardcn/Detection/blob/master/Figure/FE1.png?raw=true)
 
+#### (g)
+$P(m_{0})$ = 0.5 $P(m_{1})$ = 0.5 $\sigma_{1}^2$ = 9 $\sigma_{2}^2$ = 9 $\sigma_{3}^2$ = 9
+
 ### NOT Jointly Statistically Independent
 ### Graph for (h) (c)
 ![C2](https://github.com/Wizardcn/Detection/blob/master/Figure/C2.png?raw=true)
