@@ -20,6 +20,10 @@
 #### (e)
 ![FE1](https://github.com/Wizardcn/Detection/blob/master/Figure/FE1.png?raw=true)
 
+#### (g)
+![Equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%20%5Cbg_white%20P(m_%7B0%7D)%20=%200.5%20%5C:%20P(m_%7B1%7D)%20=%200.5%20%5C:%20%5Csigma_%7B1%7D%5E2%20=%209%20%5C:%20%5Csigma_%7B2%7D%5E2%20=%209%20%5C:%20%5Csigma_%7B3%7D%5E2%20=%209%20)
+![opt_vs_abr1](https://github.com/Wizardcn/Detection/blob/master/Figure/opt_vs_abr1.png?raw=true)
+
 ### NOT Jointly Statistically Independent
 ### Graph for (h) (c)
 ![C2](https://github.com/Wizardcn/Detection/blob/master/Figure/C2.png?raw=true)
